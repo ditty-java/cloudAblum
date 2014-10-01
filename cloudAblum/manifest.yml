@@ -1,0 +1,7 @@
+applications:
+- name: cloudAblum
+  memory: 1024M
+  host: cloudAblum
+  domain: stage1.mybluemix.net
+  services: {
+    }

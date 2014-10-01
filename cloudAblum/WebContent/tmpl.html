@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery/jquery-1.11.1.js"></script>
+<!-- The Templates plugin is included to render the upload/download listings -->
+<script src="js/jquery/plugins/upload/tmpl.js"></script>
+<script>
+function test() {
+	var data = {
+		imgs:[
+			{"url": "http://localhost:9080/cloudAblum/PhotosServlet?getthumb=140657171830711"},
+			{"url": "http://img.taopic.com/uploads/allimg/120723/201977-120H313291841.jpg"},
+			{"url": "http://img.taopic.com/uploads/allimg/120723/201977-120H313291841.jpg"},
+			{"url": "http://img.taopic.com/uploads/allimg/120723/201977-120H313291841.jpg"},
+			{"url": "http://img.taopic.com/uploads/allimg/120723/201977-120H313291841.jpg"},
+			{"url": "http://img.taopic.com/uploads/allimg/120723/201977-120H313291841.jpg"},
+			]
+	};
+	$("#tb").html(tmpl("template", data));
+}
+</script>
+</head>
+<body>
+	<button onclick="test()">test</button>
+	<table>
+		<tbody id="tb">
+		</tbody>
+	</table>
+
+	<script id="template" type="text/x-tmpl">
+		{% for (var i=0, img; img=o.imgs[i]; i++) { %}
+		<img src="{%=img.url%}">
+		{% } %}
+	</script>
+</body>
+</html>

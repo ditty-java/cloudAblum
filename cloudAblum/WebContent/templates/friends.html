@@ -1,0 +1,17 @@
+<!-- The template to display files available for download -->
+<script id="template-friends" type="text/x-tmpl">
+    {% for (var i=0, friend; friend=o.friends[i]; i++) { %}
+    <tr>
+		<td>{%=friend.UserName%}</td>
+		<td>{%=friend.UserEmail%}</td>
+		<td>{%=friend.UserMobile%}</td>
+		<td>
+			{% if (friend.AddedFlg == '1') { %}
+				<input type="button" id="{%=friend.UserId%}" name="remove" value="Remove"/>
+			{% } else { %}
+				<input type="button" id="{%=friend.UserId%}" name="add" value="Add"/>
+			{% } %}
+		</td>
+    </tr>
+    {% } %}
+</script>

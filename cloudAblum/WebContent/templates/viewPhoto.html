@@ -1,0 +1,45 @@
+	<!-- The template to display files available for download -->
+	<script id="template-view-photo" type="text/x-tmpl">
+		{% for (var i=0, file; file=o.files[i]; i++) { %}
+    	<tr class="template-download fade">
+        	<td>
+            	<span class="preview">
+                	{% if (file.thumbnailUrl) { %}
+                    	<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-comment="{%=file.comment%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                	{% } %}
+            	</span>
+        	</td>
+        	<td>
+            	<p class="name">
+                <span>{%=file.name%}&nbsp;{% if (file.shareFlg == '1') { %} <font color="blue">({%=file.shareOwner%})</font> {% } %}</span>
+				<br/>
+				<div style="border: 1px solid gray;"><span id="comment_{%=file.id%}">{%=file.comment%}</span></div>
+            </p>
+            	{% if (file.error) { %}
+                	<div><span class="label label-danger">Error</span> {%=file.error%}</div>
+            	{% } %}
+        	</td>
+        	<td>
+            	<span class="size">{%=o.formatFileSize(file.size)%}</span>
+        	</td>
+        	<td style="white-space:nowrap;">
+            	{% if (file.deleteUrl) { %}
+                	<button data-id="{%=file.id%}" class="btn delete" data-type="{%=file.deleteType%}" 
+						data-url="{%=file.deleteUrl%}"
+						{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                    	<i class="glyphicon glyphicon-trash"></i>
+                    	<span data-type="{%=file.deleteType%}" 
+						data-url="{%=file.deleteUrl%}">Delete</span>
+                	</button>
+					<button class="btn" href="#" onclick="commentPhoto('{%=file.id%}', '{%=file.comment%}');" {% if (file.shareFlg == '1') { %} disabled {% } %}>Comment</button>
+                	<input type="checkbox" name="delete" value="1" data-id="{%=file.id%}">
+            	{% } else { %}
+                	<button class="btn cancel">
+                    	<i class="glyphicon glyphicon-ban-circle"></i>
+                    	<span>Cancel</span>
+                	</button>
+            	{% } %}
+        	</td>
+    	</tr>
+		{% } %}
+		</script>

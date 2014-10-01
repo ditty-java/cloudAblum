@@ -1,0 +1,12 @@
+<!-- The template to display files available for download -->
+<script id="template-friends-select" type="text/x-tmpl">
+    {% for (var i=0, friend; friend=o.friends[i]; i++) { %}
+    <tr>
+		<td><input type="checkbox" class="toggle" name="friend_id" value="{%=friend.UserId%}">&nbsp;
+			{%=friend.UserName%}
+		</td>
+		<td>{%=friend.UserEmail%}</td>
+		<td>{%=friend.UserMobile%}</td>
+    </tr>
+    {% } %}
+</script>

@@ -1,0 +1,22 @@
+<!-- The template to display files available for download -->
+<script id="template-categories" type="text/x-tmpl">
+    {% for (var i=0, category; category=o.categories[i]; i++) { %}
+    <tr>
+        <td>
+            <a href="#" onclick="loadCategoryPhotos({%=category.CategoryId%})">{%=category.CategoryName%}</a>
+        </td>
+        <td>
+            <span>{%=category.CategoryDesc%}</span>
+        </td>
+		<td>
+            <span>{%=category.CategoryDate%}</span>
+        </td>
+        <td>
+            <button name="edit" data-id="{%=category.CategoryId%}" data-name="{%=category.CategoryName%}" data-desc="{%=category.CategoryDesc%}">Edit</button>
+			<button name="empty" data-id="{%=category.CategoryId%}">Empty</button>
+			<button name="remove" data-id="{%=category.CategoryId%}">Remove</button>
+			<button name="share" data-id="{%=category.CategoryId%}">Share</button>
+        </td>
+    </tr>
+    {% } %}
+</script>

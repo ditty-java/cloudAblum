@@ -1,0 +1,15 @@
+*{margin:0;padding:0;font-size:12px;}
+ul{list-style:none;}
+.content{width:152px;margin:100px auto;position:relative;}
+.content em{display:inline-block; background:url(images/QN1CS1.gif) 0 0 no-repeat;width:16px;height:13px;position:absolute;right:0;top:6px;cursor:pointer;}
+input{width:150px;line-height:24px;border:solid 1px #ccc;padding:0 2px;position:absolute;overflow:hidden;height:24px;}
+.uCity{border:solid 1px #ccc;width:360px;top:25px;position:absolute;padding:5px;}
+#delete{float:right;width:14px;height:14px;display:inline-block;cursor:pointer;}
+h3 span{float:left;color:#555;font-size:12px;font-weight:normal;}
+h3{height:16px;overflow:hidden;}
+.list{width:100%;border-bottom:solid 1px #ccc;height:22px;margin-top:4px;}
+.list li{float:left;padding:0 8px;height:20px;line-height:20px;text-align:center;color:#555;font-family:arial;background:#F6F6F6;position:relative;bottom:-1px;border:solid 1px #ddd;margin-right:8px;cursor:pointer;}
+.list li.active{border-bottom:solid 1px #fff;background:#fff;}
+.conDiv{width:100%;overflow: hidden;}
+.city_sort{width:100%;padding-top:5px;display:none;}
+.city_sort li.list_inner{float:left;padding:6px 0;width:20% !important;text-align:center;cursor:pointer;}

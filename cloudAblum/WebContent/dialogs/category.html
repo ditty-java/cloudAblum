@@ -1,0 +1,44 @@
+ <!-- Create Category dialog -->
+<div id="create_category_div" title="Create Your Category">
+	<p class="validateTips"></p>
+	<form name="create_category_form" id="create_category_form">
+		<fieldset>
+			<label for="category_name">Category Name</label>
+			<input type="text" name="category_name" id="category_name" class="text ui-widget-content ui-corner-all" />
+			<label for="category_desc">Description</label>
+			<input type="text" id="category_desc" name="category_desc" class="textera ui-widget-content ui-corner-all" style="width:100%, height:100%"></textarea>
+		</fieldset>
+	</form>
+ </div>
+<!-- Edit Category dialog -->
+<div id="edit_category_div" title="Edit Your Category">
+	<p class="validateTips"></p>
+	<form name="edit_category_form" id="edit_category_form">
+		<fieldset>
+			<input type="hidden" name="category_id" id="category_id"/>
+			<label for="category_name">Category Name</label>
+			<input type="text" name="category_name" id="category_name" class="text ui-widget-content ui-corner-all" readonly/>
+			<label for="category_desc">Description</label>
+			<input type="text" id="category_desc" name="category_desc" class="textera ui-widget-content ui-corner-all" style="width:100%, height:100%">
+			</textarea>
+		</fieldset>
+	</form>
+</div>
+ 
+ <!-- Add Photos to Category dialog -->
+<div id="add_photos_to_category_div" title="Add Photos to Category">
+	<form name="add_photos_to_category_form" id="add_photos_to_category_form">
+		<input type="hidden" name="category_photos" id="photos"/>
+		<table id="categoriesTable_select" class="display" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody id='tbody_categories_select'>
+			</tbody>
+		</table>
+	</form>
+ </div>
